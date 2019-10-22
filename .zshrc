@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/aliyeysides/.oh-my-zsh"
+export ZSH="/Users/{username}/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -10,14 +10,8 @@ export ZSH="/Users/aliyeysides/.oh-my-zsh"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="spaceship"
 
-SPACESHIP_PROMPT_ADD_NEWLINE="true"
-SPACESHIP_CHAR_SYMBOL="\uf0e7"
-SPACESHIP_CHAR_PREFIX="\uf296"
-SPACESHIP_CHAR_SUFFIX=(" ")
-SPACESHIP_CHAR_COLOR_SUCCESS="yellow"
-SPACESHIP_PROMPT_DEFAULT_PREFIX="$USER"
-SPACESHIP_PROMPT_FIRST_PREFIX_SHOW="true"
-SPACESHIP_USER_SHOW="true"
+# Go path environment variable set to home directory
+export GOPATH=$HOME
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -87,7 +81,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source $(dirname $(gem which colorls))/tab_complete.sh
+# source $(dirname $(gem which colorls))/tab_complete.sh
 
 . ~/z.sh
 
@@ -120,17 +114,25 @@ source $(dirname $(gem which colorls))/tab_complete.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-  # Set Spaceship ZSH as a prompt
-  autoload -U promptinit; promptinit
-  prompt spaceship
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit
+promptinit
+prompt spaceship
 
 # Aliases
-alias ls="colorls --sd --sf -r --gs --dark"
+alias ls="colorls --sd --sf -r --dark"
+alias update="source ~/.zshrc"
+
+# Git Aliases
 alias gs="git status"
 alias gcb="git checkout -b $1"
 alias gco="git checkout $1"
 alias gba="git branch -a"
 alias gsu="git --set-upstream origin $1"
+alias gpush="git push"
+alias gpull="git pull"
+alias glog="git log --oneline"
+alias glogs="git log --stat"
 
 # Helper functions
 cs() { cd "$1" && ls; }
@@ -139,4 +141,15 @@ killPort() {
   lsof -P | grep $1 | awk '{print $2}' | xargs kill -9
 }
 
-pwd && ls 
+pwd && ls
+# heroku autocomplete setup
+HEROKU_AC_ZSH_SETUP_PATH=/Users/{username}/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
