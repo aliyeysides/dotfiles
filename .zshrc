@@ -15,6 +15,18 @@ SPACESHIP_CHAR_SYMBOL=λ
 SPACESHIP_CHAR_COLOR_SUCCESS=208
 SPACESHIP_CHAR_SUFFIX=" "
 
+# Use lf to switch directories and bind it to ctrl-o
+lfcd () {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp"
+        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+    fi
+}
+bindkey -s '^o' 'lfcd\n'
+
 # Go path environment variable set to home directory
 export GOPATH=$HOME
 
@@ -148,6 +160,8 @@ killPort() {
 }
 
 pwd && ls
+
+bindkey -s '^u' 'clear && pwd && ls\n'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
