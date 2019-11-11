@@ -151,6 +151,7 @@ alias gpush="git push"
 alias gpull="git pull"
 alias glog="git log --oneline"
 alias glogs="git log --stat"
+alias here="ls -la | grep $1"
 
 # Helper functions
 cs() { cd "$1" && ls; }
