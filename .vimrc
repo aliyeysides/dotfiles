@@ -11,7 +11,8 @@ Plugin 'gmarik/Vundle.vim'
 " ----- Making Vim look good ------------------------------------------
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+
 " ----- Vim as a programmer's text editor -----------------------------
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
@@ -24,6 +25,7 @@ Plugin 'quramy/tsuquyomi'
 Plugin 'prettier/vim-prettier'
 Plugin 'townk/vim-autoclose'
 Plugin 'junegunn/fzf'
+Plugin 'sainnhe/gruvbox-material'
 
 call vundle#end()
 
@@ -36,6 +38,11 @@ set number
 set showcmd
 set incsearch
 set hlsearch
+set ignorecase
+set autowriteall
+
+" --- Auto write on text change ---
+autocmd CursorHold,CursorHoldI * :SyntasticCheck
 
 syntax on
 
@@ -43,15 +50,13 @@ set mouse=a
 
 " ----- Plugin-Specific Settings --------------------------------------
 
-" ----- altercation/vim-colors-solarized settings -----
-" Toggle this to "light" for light colorscheme
+" if you don't set this option, this color scheme will fall back to the original gruvbox
+set termguicolors
+
+" for dark version
 set background=dark
 
-" Uncomment the next line if your terminal is not configured for solarized
-let g:solarized_termcolors=256
-
-" Set the colorscheme
-colorscheme solarized
+colorscheme gruvbox-material
 
 " Fzf search
 set rtp+=/usr/local/opt/fzf
@@ -65,7 +70,7 @@ set laststatus=2
 "     https://github.com/abertsch/Menlo-for-Powerline
 " download all the .ttf files, double-click on them and click "Install"
 " Finally, uncomment the next line
-"let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 
 " Show PASTE if in paste mode
 let g:airline_detect_paste=1
@@ -103,3 +108,17 @@ nmap <silent> <leader>b :TagbarToggle<CR>
 
 " ----- quramy/tsuquyomi settings -----
 let g:tsuquyomi_completion_detail = 1
+
+" ----- scrooloose/syntastic settings -----
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_mode_map={'mode': 'active'} 
+let g:syntastic_check_on_open = 1
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_check_on_wq=0
+let g:syntastic_auto_loc_list=1
+
+" ----- syntastic checkers -----
+let g:syntastic_typescript_checkers = ['eslint', 'tsuquyomi']
