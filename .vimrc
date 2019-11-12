@@ -27,6 +27,7 @@ Plugin 'townk/vim-autoclose'
 Plugin 'junegunn/fzf'
 Plugin 'sainnhe/gruvbox-material'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-repeat'
 
 call vundle#end()
 
@@ -89,6 +90,7 @@ map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
 map  <C-n> :tabnew<CR>
 map  <C-p> :PrettierAsync<CR>
+map <esc> :noh<cr>
 
 " ----- xolox/vim-easytags settings -----
 " Where to look for tags files
