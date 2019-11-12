@@ -26,6 +26,7 @@ Plugin 'prettier/vim-prettier'
 Plugin 'townk/vim-autoclose'
 Plugin 'junegunn/fzf'
 Plugin 'sainnhe/gruvbox-material'
+Plugin 'scrooloose/nerdcommenter'
 
 call vundle#end()
 
