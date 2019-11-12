@@ -16,6 +16,14 @@ Plugin 'bling/vim-airline'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'scrooloose/syntastic'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
+Plugin 'majutsushi/tagbar'
+Plugin 'universal-ctags/ctags'
+Plugin 'quramy/tsuquyomi'
+Plugin 'prettier/vim-prettier'
+Plugin 'townk/vim-autoclose'
+Plugin 'junegunn/fzf'
 
 call vundle#end()
 
@@ -45,6 +53,8 @@ let g:solarized_termcolors=256
 " Set the colorscheme
 colorscheme solarized
 
+" Fzf search
+set rtp+=/usr/local/opt/fzf
 
 " ----- bling/vim-airline settings -----
 " Always show statusbar
@@ -63,7 +73,6 @@ let g:airline_detect_paste=1
 " Show airline for tabs too
 let g:airline#extensions#tabline#enabled = 1
 
-
 " ----- jistr/vim-nerdtree-tabs -----
 " Open/close NERDTree Tabs with \t
 nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
@@ -73,3 +82,24 @@ let g:nerdtree_tabs_open_on_console_startup = 1
 map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
 map  <C-n> :tabnew<CR>
+map  <C-p> :PrettierAsync<CR>
+
+" ----- xolox/vim-easytags settings -----
+" Where to look for tags files
+set tags=./tags;,~/.vimtags
+
+" Sensible defaults
+let g:easytags_events = ['BufReadPost', 'BufWritePost']
+let g:easytags_async = 1
+let g:easytags_dynamic_files = 2
+let g:easytags_resolve_links = 1
+let g:easytags_suppress_ctags_warning = 1
+
+" ----- majutsushi/tagbar settings -----
+" Open/close tagbar with \b
+nmap <silent> <leader>b :TagbarToggle<CR>
+" Uncomment to open tagbar automatically whenever possible
+"autocmd BufEnter * nested :call tagbar#autoopen(0)
+
+" ----- quramy/tsuquyomi settings -----
+let g:tsuquyomi_completion_detail = 1
