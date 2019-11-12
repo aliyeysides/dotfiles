@@ -140,6 +140,7 @@ prompt spaceship
 alias ls="colorls --sd --sf -r --dark"
 alias update="source ~/.zshrc"
 alias edit="vim ~/.zshrc"
+alias here="ls -la | grep $1"
 
 # Git Aliases
 alias gs="git status"
@@ -168,3 +169,5 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
