@@ -86,12 +86,6 @@ nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
 " To have NERDTree always open on startup
 let g:nerdtree_tabs_open_on_console_startup = 1
 
-map  <C-l> :tabn<CR>
-map  <C-h> :tabp<CR>
-map  <C-n> :tabnew<CR>
-map  <C-p> :PrettierAsync<CR>
-map <esc> :noh<cr>
-
 " ----- xolox/vim-easytags settings -----
 " Where to look for tags files
 set tags=./tags;,~/.vimtags
@@ -125,3 +119,13 @@ let g:syntastic_auto_loc_list=1
 
 " ----- syntastic checkers -----
 let g:syntastic_typescript_checkers = ['eslint', 'tsuquyomi']
+
+" ----- misc mappings -----
+map! jk <Esc> " map jk to Esc
+map! kj <Esc> " map kj to Esc
+map  <C-l> :tabn<CR>
+map  <C-h> :tabp<CR>
+map  <C-n> :tabnew<CR>
+map  <C-p> :PrettierAsync<CR>
+map <esc> :noh<CR>
+map <TAB> :NERDTreeFocusToggle<CR>
