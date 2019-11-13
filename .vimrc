@@ -28,6 +28,10 @@ Plugin 'junegunn/fzf'
 Plugin 'sainnhe/gruvbox-material'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-repeat'
+Plugin 'robbyrussell/oh-my-zsh'
+Plugin 'trkw/yarn.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()
 
@@ -104,11 +108,13 @@ nmap <silent> <leader>b :TagbarToggle<CR>
 "autocmd BufEnter * nested :call tagbar#autoopen(0)
 
 " ----- quramy/tsuquyomi settings -----
-let g:tsuquyomi_completion_detail = 1
+" let g:tsuquyomi_completion_detail = 1
+let g:tsuquyomi_disable_quickfix = 1
 
 " ----- scrooloose/syntastic settings -----
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%{FugitiveStatusline()}
 set statusline+=%*
 
 let g:syntastic_mode_map={'mode': 'active'} 
