@@ -12,6 +12,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tomasr/molokai'
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " ----- Vim as a programmer's text editor -----------------------------
 Plugin 'scrooloose/nerdtree'
@@ -77,6 +78,8 @@ set laststatus=2
 " download all the .ttf files, double-click on them and click "Install"
 " Finally, uncomment the next line
 let g:airline_powerline_fonts = 1
+
+let g:airline_theme = 'deus'
 
 " Show PASTE if in paste mode
 let g:airline_detect_paste=1
