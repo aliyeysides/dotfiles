@@ -33,6 +33,7 @@ Plugin 'robbyrussell/oh-my-zsh'
 Plugin 'trkw/yarn.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'xolox/vim-notes'
 
 call vundle#end()
 
@@ -132,8 +133,8 @@ let g:syntastic_typescript_checkers = ['eslint', 'tsuquyomi']
 " ----- misc mappings -----
 map! jk <Esc> " map jk to Esc
 map! kj <Esc> " map kj to Esc
-map  <C-l> :tabn<CR>
-map  <C-h> :tabp<CR>
+map  <C-l> :bn<CR> 
+map  <C-h> :bp<CR>
 map  <C-n> :tabnew<CR>
 map  <C-p> :PrettierAsync<CR>
 map <esc> :noh<CR>
