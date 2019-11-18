@@ -98,7 +98,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-# source $(dirname $(gem which colorls))/tab_complete.sh
+#source $(dirname $(gem which colorls))/tab_complete.sh
 
 . ~/z.sh
 
@@ -132,15 +132,17 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Set Spaceship ZSH as a prompt
-autoload -U promptinit
-promptinit
-prompt spaceship
+#autoload -U promptinit
+#promptinit
+#prompt spaceship
 
 # Aliases
 alias ls="colorls --sd --sf -r --dark"
 alias update="source ~/.zshrc"
 alias edit="vim ~/.zshrc"
 alias here="ls -la | grep $1"
+alias vpdate="source ~/.vimrc"
+alias vedit="vim ~/.vimrc"
 
 # Git Aliases
 alias gs="git status"
@@ -152,7 +154,6 @@ alias gpush="git push"
 alias gpull="git pull"
 alias glog="git log --oneline"
 alias glogs="git log --stat"
-alias here="ls -la | grep $1"
 
 # Helper functions
 cs() { cd "$1" && ls; }
@@ -161,8 +162,6 @@ killPort() {
   lsof -P | grep $1 | awk '{print $2}' | xargs kill -9
 }
 
-pwd && ls
-
 bindkey -s '^u' 'clear && pwd && ls\n'
 
 export NVM_DIR="$HOME/.nvm"
@@ -170,5 +169,3 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
