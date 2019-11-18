@@ -28,7 +28,6 @@ Plugin 'universal-ctags/ctags'
 Plugin 'quramy/tsuquyomi'
 Plugin 'prettier/vim-prettier'
 Plugin 'townk/vim-autoclose'
-Plugin 'junegunn/fzf'
 Plugin 'sainnhe/gruvbox-material'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-repeat'
@@ -68,9 +67,6 @@ set termguicolors
 set background=dark
 
 colorscheme gruvbox-material
-
-" Fzf search
-set rtp+=/usr/local/opt/fzf
 
 " ----- bling/vim-airline settings -----
 " Always show statusbar
