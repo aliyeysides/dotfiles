@@ -1,6 +1,9 @@
 " Gotta be first
 set nocompatible
 
+" Directory for swapfiles
+set directory=$HOME/.vim/swapfiles//
+
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
