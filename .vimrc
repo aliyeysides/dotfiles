@@ -128,6 +128,7 @@ let g:syntastic_auto_loc_list=1
 
 " ----- syntastic checkers -----
 let g:syntastic_typescript_checkers = ['eslint', 'tsuquyomi']
+let g:syntastic_json_checkers = ['eslint']
 
 " ----- misc mappings -----
 map! jk <Esc> " map jk to Esc
