@@ -36,6 +36,7 @@ Plugin 'trkw/yarn.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'xolox/vim-notes'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 call vundle#end()
 
@@ -50,13 +51,18 @@ set incsearch
 set hlsearch
 set ignorecase
 set autowriteall
-
-" --- Auto write on text change ---
-autocmd CursorHold,CursorHoldI * :SyntasticCheck
-
 syntax on
 
-set mouse=a
+" --- Auto check on text change ---
+autocmd CursorHold,CursorHoldI * :SyntasticCheck
+
+" --- Prettier ---
+"  " when running at every change you may want to disable quickfix
+let g:prettier#quickfix_enabled = 0
+
+let g:prettier#autoformat = 0
+autocmd BufWritePre,TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+
 
 " ----- Plugin-Specific Settings --------------------------------------
 
@@ -136,6 +142,5 @@ map! kj <Esc> " map kj to Esc
 map  <C-l> :bn<CR> 
 map  <C-h> :bp<CR>
 map  <C-n> :tabnew<CR>
-map  <C-p> :PrettierAsync<CR>
 map <esc> :noh<CR>
 map <TAB> :NERDTreeFocusToggle<CR>
