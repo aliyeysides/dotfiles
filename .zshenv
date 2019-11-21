@@ -1,0 +1,1 @@
+ZDOTDIR="${ZDOTDIR:-$HOME/.zsh}"
