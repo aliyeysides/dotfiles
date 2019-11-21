@@ -1,10 +1,38 @@
-" Gotta be first
+" --- General settings ---
 set nocompatible
-
-" Directory for swapfiles
+set modelines=0
+set backspace=indent,eol,start
+set ruler
+set number
+set showcmd
+set showmode
+set autowriteall
 set directory=$HOME/.vim/swapfiles//
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+set relativenumber
+set scrolloff=10            
+set wildmenu
+set wildmode=list:longest
+set undofile
+set hidden
+
+" --- Search settings ---
+set incsearch
+set hlsearch
+set ignorecase
+set smartcase
+set gdefault
+set showmatch
+
+let mapleader = ","
+
+syntax on
 
 filetype off
+filetype plugin indent on
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -39,19 +67,6 @@ Plugin 'xolox/vim-notes'
 Plugin 'ctrlpvim/ctrlp.vim'
 
 call vundle#end()
-
-filetype plugin indent on
-
-" --- General settings ---
-set backspace=indent,eol,start
-set ruler
-set number
-set showcmd
-set incsearch
-set hlsearch
-set ignorecase
-set autowriteall
-syntax on
 
 " --- Auto check on text change ---
 autocmd CursorHold,CursorHoldI * :SyntasticCheck
@@ -139,8 +154,11 @@ let g:syntastic_json_checkers = ['eslint']
 " ----- misc mappings -----
 map! jk <Esc> " map jk to Esc
 map! kj <Esc> " map kj to Esc
-map  <C-l> :bn<CR> 
-map  <C-h> :bp<CR>
+map  <TAB> :bn<CR> 
 map  <C-n> :tabnew<CR>
-map <esc> :noh<CR>
-map <TAB> :NERDTreeFocusToggle<CR>
+nnoremap <leader><space> :noh<cr>
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <leader>v V`]
