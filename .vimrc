@@ -8,6 +8,8 @@ set showcmd
 set showmode
 set autowriteall
 set directory=$HOME/.vim/swapfiles//
+set backupdir=$HOME/.vim/backupfiles//
+set undodir=$HOME/.vim/undofiles//
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -113,6 +115,8 @@ let g:airline#extensions#tabline#enabled = 1
 nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
 " To have NERDTree always open on startup
 let g:nerdtree_tabs_open_on_console_startup = 1
+let NERDTreeShowLineNumbers=1
+autocmd FileType nerdtree setlocal relativenumber
 
 " ----- xolox/vim-easytags settings -----
 " Where to look for tags files
