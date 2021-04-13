@@ -16,14 +16,14 @@ SPACESHIP_CHAR_COLOR_SUCCESS=208
 SPACESHIP_CHAR_SUFFIX=" "
 
 # Use lf to switch directories and bind it to ctrl-o
-lfcd () {
-    tmp="$(mktemp)"
-    lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp"
-        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
-    fi
+lfcd() {
+  tmp="$(mktemp)"
+  lf -last-dir-path="$tmp" "$@"
+  if [ -f "$tmp" ]; then
+    dir="$(cat "$tmp")"
+    rm -f "$tmp"
+    [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+  fi
 }
 bindkey -s '^o' 'lfcd\n'
 
@@ -143,12 +143,16 @@ alias edit="vim ~/.zshrc"
 alias here="ls -la | grep $1"
 alias vpdate="source ~/.vimrc"
 alias vedit="vim ~/.vimrc"
+alias python=python3
+alias pip=pip3
 
 # Git Aliases
 alias gs="git status"
 alias gcb="git checkout -b $1"
 alias gco="git checkout $1"
+alias gcim="git commit -m $1"
 alias gba="git branch -a"
+alias gbag="git branch -a | grep $1"
 alias gsu="git --set-upstream origin $1"
 alias gpush="git push"
 alias gpull="git pull"
@@ -162,8 +166,12 @@ killPort() {
   lsof -P | grep $1 | awk '{print $2}' | xargs kill -9
 }
 
+bindkey -s '^u' 'clear && pwd && ls\n'
+
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+export PATH="$HOME/.poetry/bin:$PATH"
