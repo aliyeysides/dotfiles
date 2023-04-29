@@ -1,5 +1,7 @@
 return {
   'VonHeikemen/lsp-zero.nvim',
+  lazy = false,
+  priority = 1, -- Load before other plugins (cmp and lspconfig)
   branch = 'v2.x',
   dependencies = {
     -- LSP Support
