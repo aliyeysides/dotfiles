@@ -8,6 +8,8 @@ opt.rnu = true
 opt.scrolloff = 8
 opt.wrap = true
 
+opt.laststatus = 3
+
 opt.signcolumn = "yes"
 
 -- Indenting
@@ -25,4 +27,4 @@ opt.hlsearch = false
 opt.incsearch = true
 
 opt.termguicolors = true
-opt.background = "light"
+opt.background = "dark"
