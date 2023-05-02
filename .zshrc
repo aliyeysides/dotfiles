@@ -13,7 +13,6 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 plugins=(
   aws
-  dotenv
   fzf
   python
   pyenv
