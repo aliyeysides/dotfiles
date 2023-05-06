@@ -67,6 +67,8 @@ alias glogs="git log --stat"
 bindkey -s '^f' 'fzf\n'
 
 export PATH="$HOME/.flutter/flutter/bin:$PATH"
+export PATH="$HOME/go/bin:$PATH"
+export PATH="$HOME/usr/local/go/bin/go:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
