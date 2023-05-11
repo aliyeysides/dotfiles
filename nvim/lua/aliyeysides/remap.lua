@@ -37,3 +37,6 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 
 -- replace word on cursor
 keymap.set("n", "<leader>s", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left>")
+
+-- undo tree visualizer 
+keymap.set('n', '<leader>E', vim.cmd.UndotreeToggle)
