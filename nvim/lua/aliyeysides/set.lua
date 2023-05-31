@@ -1,5 +1,7 @@
 local opt = vim.opt
 
+opt.clipboard = "unnamed"
+
 opt.foldmethod = "indent"
 opt.foldlevel = 99
 
