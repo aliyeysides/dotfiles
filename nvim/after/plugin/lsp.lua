@@ -23,6 +23,11 @@ lsp.on_attach(function(client, bufnr)
   keymap.set("n", "<leader>fm", function()
     vim.lsp.buf.format { async = true }
   end)
+
+  -- go to definition
+  keymap.set("n", "<leader>gd", function()
+    vim.lsp.buf.definition()
+  end)
 end)
 
 -- (Optional) Configure lua language server for neovim
