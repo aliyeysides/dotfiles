@@ -105,3 +105,11 @@ export NVM_DIR="$HOME/.nvm"
 
 # Added by Amplify CLI binary installer
 export PATH="$HOME/.amplify/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/aliyeysides/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
