@@ -6,6 +6,7 @@ opt.foldmethod = "indent"
 opt.foldlevel = 99
 
 opt.rnu = true
+opt.number = true
 
 opt.scrolloff = 8
 opt.wrap = true
