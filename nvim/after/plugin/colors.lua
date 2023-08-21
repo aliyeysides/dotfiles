@@ -7,8 +7,9 @@ function SetColors(color)
   vim.g.rose_pine_disable_eob = true
   vim.g.rose_pine_background = "transparent"
   vim.g.rose_pine_borders = true
-  -- configure opacity of background 
+  -- configure opacity of background
   vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
+  vim.cmd("highlight SignColumn guibg=NONE")
 end
 
 SetColors()
