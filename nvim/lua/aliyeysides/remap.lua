@@ -39,4 +39,4 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 keymap.set("n", "<leader>S", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left>")
 
 -- undo tree visualizer 
-keymap.set('n', '<leader>E', vim.cmd.UndotreeToggle)
+keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
