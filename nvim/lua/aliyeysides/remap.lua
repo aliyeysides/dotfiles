@@ -12,7 +12,7 @@ keymap.set("i", "<C-l>", "<Right>")
 keymap.set("i", "<C-j>", "<Down>")
 keymap.set("i", "<C-k>", "<Up>")
 
--- switch between windows 
+-- switch between windows
 keymap.set("n", "<C-h>", "<C-w>h")
 keymap.set("n", "<C-l>", "<C-w>l")
 keymap.set("n", "<C-j>", "<C-w>j")
@@ -38,5 +38,5 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- replace word on cursor
 keymap.set("n", "<leader>S", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left>")
 
--- undo tree visualizer 
+-- undo tree visualizer
 keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
