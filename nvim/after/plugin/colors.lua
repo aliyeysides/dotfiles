@@ -1,3 +1,7 @@
+require('rose-pine').setup({
+  disable_background = true,
+})
+
 function SetColors(color)
   color = color or "rose-pine"
   vim.cmd.colorscheme(color)
@@ -7,9 +11,11 @@ function SetColors(color)
   vim.g.rose_pine_disable_eob = true
   vim.g.rose_pine_background = "transparent"
   vim.g.rose_pine_borders = true
-  -- configure opacity of background
+
   vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
-  vim.cmd("highlight SignColumn guibg=NONE")
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
+
+  vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE" })
 end
 
 SetColors()
