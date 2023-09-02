@@ -31,3 +31,6 @@ opt.incsearch = true
 
 opt.termguicolors = true
 opt.background = "dark"
+
+opt.statusline = "%0.50F%m %= %y %l/%L %p%%"
+
