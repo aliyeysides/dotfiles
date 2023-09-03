@@ -64,6 +64,11 @@ alias gpull="git pull"
 alias glog="git log --oneline --graph"
 alias glogs="git log --stat"
 
+# Goose Migrations
+alias ms="goose postgres \"$(<.env.db)\" status"
+alias mc="goose -dir ./migrations postgres \"$(<.env.db)\" create $1 $2"
+alias mup="goose -dir ./migrations postgres \"$(<.env.db)\" up"
+
 bindkey -s '^f' 'fzf\n'
 
 export PATH="$HOME/.flutter/flutter/bin:$PATH"
