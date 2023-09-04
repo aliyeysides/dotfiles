@@ -4,9 +4,8 @@ local keymap = vim.keymap
 g.mapleader = " "
 
 -- copilot
-g.copilot_assume_mapped = true
 g.copilot_no_tab_map = true
-keymap.set("i", "<CR>", 'copilot#Accept("<CR>")',
+keymap.set("i", "<M-;>", 'copilot#Accept("<CR>")',
   { noremap = true, silent = true, expr = true, replace_keycodes = false })
 
 -- opens netrw
