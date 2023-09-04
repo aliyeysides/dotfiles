@@ -1,6 +1,6 @@
-local keymap = vim.keymap
+local map = vim.keymap.set
 
-keymap.set("n", "<leader>/", function()
+map("n", "<leader>/", function()
   require('Comment.api').toggle.linewise.current()
 end)
-keymap.set("v", "<leader>/", "<ESC><cmd>lua require('Comment.api').toggle.blockwise(vim.fn.visualmode())<CR>")
+map("v", "<leader>/", "<ESC><cmd>lua require('Comment.api').toggle.blockwise(vim.fn.visualmode())<CR>")

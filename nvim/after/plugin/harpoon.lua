@@ -1,8 +1,8 @@
 require("harpoon")
 
-local keymap = vim.keymap
+local map = vim.keymap.set
 
-keymap.set("n", "<leader>s", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>",
+map("n", "<leader>s", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>",
   { noremap = true, silent = true })
-keymap.set("n", "<leader>a", "<cmd>lua require('harpoon.mark').add_file()<cr>",
+map("n", "<leader>a", "<cmd>lua require('harpoon.mark').add_file()<cr>",
   { noremap = true, silent = true })
