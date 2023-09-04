@@ -3,6 +3,12 @@ local keymap = vim.keymap
 
 g.mapleader = " "
 
+-- copilot
+g.copilot_assume_mapped = true
+g.copilot_no_tab_map = true
+keymap.set("i", "<CR>", 'copilot#Accept("<CR>")',
+  { noremap = true, silent = true, expr = true, replace_keycodes = false })
+
 -- opens netrw
 keymap.set("n", "<leader>e", vim.cmd.Ex)
 

@@ -64,7 +64,7 @@ alias gpull="git pull"
 alias glog="git log --oneline --graph"
 alias glogs="git log --stat"
 
-# Goose Migrations
+# Goose Migrations // TODO: move this into make file for project
 alias ms="goose postgres \"$(<.env.db)\" status"
 alias mc="goose -dir ./migrations postgres \"$(<.env.db)\" create $1 $2"
 alias mup="goose -dir ./migrations postgres \"$(<.env.db)\" up"
