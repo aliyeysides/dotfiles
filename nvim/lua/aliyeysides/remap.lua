@@ -8,6 +8,9 @@ g.copilot_no_tab_map = true
 map("i", "<M-;>", 'copilot#Accept("<CR>")',
   { noremap = true, silent = true, expr = true, replace_keycodes = false })
 
+-- symbols outline
+map("n", "<leader>o", vim.cmd.SymbolsOutline)
+
 -- opens netrw
 map("n", "<leader>e", vim.cmd.Ex)
 
