@@ -3,14 +3,6 @@ local map = vim.keymap.set
 
 g.mapleader = " "
 
--- copilot
-g.copilot_no_tab_map = true
-map("i", "<M-;>", 'copilot#Accept("<CR>")',
-  { noremap = true, silent = true, expr = true, replace_keycodes = false })
-
--- symbols outline
-map("n", "<leader>o", vim.cmd.SymbolsOutline)
-
 -- opens netrw
 map("n", "<leader>e", vim.cmd.Ex)
 
@@ -45,6 +37,3 @@ map("v", "K", ":m '<-2<CR>gv=gv")
 
 -- replace word on cursor
 map("n", "<leader>S", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left>")
-
--- undo tree visualizer
-map('n', '<leader>u', vim.cmd.UndotreeToggle)
