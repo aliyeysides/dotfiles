@@ -35,5 +35,13 @@ map("v", "<leader>p", "\"_dP")
 map("v", "J", ":m '>+1<CR>gv=gv")
 map("v", "K", ":m '<-2<CR>gv=gv")
 
+-- center after navigation
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
+
+-- center search terms
+map("n", "n", "nzzzv")
+map("n", "N", "Nzzzv")
+
 -- replace word on cursor
 map("n", "<leader>S", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left>")
