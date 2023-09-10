@@ -45,3 +45,6 @@ map("n", "N", "Nzzzv")
 
 -- replace word on cursor
 map("n", "<leader>S", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left>")
+
+-- disable Q key
+map("n", "Q", "<nop>")
