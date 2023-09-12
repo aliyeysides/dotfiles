@@ -1,4 +1,5 @@
 local lsp = require('lsp-zero').preset({})
+local config = require('lspconfig')
 local map = vim.keymap.set
 
 lsp.on_attach(function(client, bufnr)
@@ -31,7 +32,7 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 -- (Optional) Configure lua language server for neovim
-require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-require('lspconfig').svelte.setup({})
+config.lua_ls.setup(lsp.nvim_lua_ls())
+config.svelte.setup({})
 
 lsp.setup()
