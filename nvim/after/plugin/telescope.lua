@@ -6,5 +6,8 @@ map('n', '<leader>ff', function()
 end)
 map('n', '<leader>gt', builtin.git_files, {})
 map('n', '<leader>pf', function()
-  builtin.grep_string({ search = vim.fn.input("Grep > ") });
+  builtin.live_grep();
+end)
+map('n', '<leader>fw', function()
+  builtin.grep_string();
 end)
