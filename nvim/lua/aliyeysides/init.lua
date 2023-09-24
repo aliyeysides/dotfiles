@@ -25,7 +25,11 @@ autocmd("WinNew", {
   group = aliyeysidesgroup,
   pattern = "*",
   callback = function()
-    vim.opt.winbar = "%f"
+    local wincount = vim.api.nvim_list_wins()
+
+    if #wincount == 2 then
+      vim.opt.winbar = "%f"
+    end
   end,
 })
 
@@ -35,7 +39,7 @@ autocmd("WinClosed", {
   callback = function()
     local wincount = vim.api.nvim_list_wins()
 
-    if #wincount == 2 then -- netrw counts as a window I guess?
+    if #wincount == 2 then
       vim.opt.winbar = ""
     end
   end,
