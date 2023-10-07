@@ -1,15 +1,17 @@
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-export ZSH="$HOME/.oh-my-zsh"
+zmodload zsh/zprof
 
-zstyle ':omz:update' mode auto
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export ZSH="$HOME/.oh-my-zsh"
+
+# zstyle ':omz:update' mode auto
 export WEZTERM_CONFIG_FILE="$HOME/.config/wezterm/wezterm.lua"
 
-export ZSH_THEME="spaceship"
+# export ZSH_THEME="spaceship"
 
-export SPACESHIP_CONFIG="$HOME/.config/spaceship/.spaceshiprc.zsh"
+# export SPACESHIP_CONFIG="$HOME/.config/spaceship/.spaceshiprc.zsh"
 
-COMPLETION_WAITING_DOTS="true"
-DISABLE_UNTRACKED_FILES_DIRTY="true"
+# COMPLETION_WAITING_DOTS="true"
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 plugins=(
   aws
@@ -21,18 +23,15 @@ plugins=(
   brew
   docker
   docker-compose
-  gem
   git
   github
   golang
   npm
   node
-  rbenv
-  ruby
 )
 
 export ZSH_COMPDUMP=$ZSH/cache/compdump/.zcompdump-$HOST
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 export _Z_DATA=$HOME/.cache/z/.z
 . ~/z.sh
@@ -66,7 +65,6 @@ alias glogs="git log --stat"
 
 bindkey -s '^f' 'fzf\n'
 
-export PATH="$HOME/.flutter/flutter/bin:$PATH"
 export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/usr/local/go/bin/go:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
@@ -97,14 +95,24 @@ unset __conda_setup
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
-source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+lazy_load_nvm() {
+  unset -f node nvm
+  export NVM_DIR=~/.nvm
+  [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
+}
 
-# Added by Amplify CLI binary installer
-export PATH="$HOME/.amplify/bin:$PATH"
+node() {
+  lazy_load_nvm
+  node $@
+}
+
+nvm() {
+  lazy_load_nvm
+  nvm $@
+}
 
 # pnpm
 export PNPM_HOME="/Users/aliyeysides/Library/pnpm"
@@ -113,3 +121,4 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+zprof > /tmp/profile 
