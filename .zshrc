@@ -1,37 +1,10 @@
 zmodload zsh/zprof
 
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-# export ZSH="$HOME/.oh-my-zsh"
 
-# zstyle ':omz:update' mode auto
 export WEZTERM_CONFIG_FILE="$HOME/.config/wezterm/wezterm.lua"
 
-# export ZSH_THEME="spaceship"
-
-# export SPACESHIP_CONFIG="$HOME/.config/spaceship/.spaceshiprc.zsh"
-
-# COMPLETION_WAITING_DOTS="true"
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-plugins=(
-  aws
-  fzf
-  python
-  pyenv
-  poetry
-  virtualenv
-  brew
-  docker
-  docker-compose
-  git
-  github
-  golang
-  npm
-  node
-)
-
 export ZSH_COMPDUMP=$ZSH/cache/compdump/.zcompdump-$HOST
-# source $ZSH/oh-my-zsh.sh
 
 export _Z_DATA=$HOME/.cache/z/.z
 . ~/z.sh
@@ -51,6 +24,7 @@ alias update="source ~/.zshrc"
 alias here="ls -la | grep $1"
 
 # Git Aliases
+alias ga="git add $1"
 alias gs="git status"
 alias gcb="git checkout -b $1"
 alias gco="git checkout $1"
@@ -94,8 +68,6 @@ unset __conda_setup
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
-
-# source $HOMEBREW_PREFIX/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 lazy_load_nvm() {
   unset -f node nvm
