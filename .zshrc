@@ -15,6 +15,13 @@ else
   export EDITOR='nvim'
 fi
 
+autoload -Uz compinit
+for dump in ~/.zcompdump(N.mh+24); do
+  compinit
+done
+
+compinit -C
+
 # Aliases
 alias :q="exit"
 alias vim="nvim"
@@ -25,6 +32,7 @@ alias here="ls -la | grep $1"
 
 # Git Aliases
 alias ga="git add $1"
+alias gd="git diff"
 alias gs="git status"
 alias gcb="git checkout -b $1"
 alias gco="git checkout $1"
