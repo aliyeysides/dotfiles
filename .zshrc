@@ -24,7 +24,7 @@ compinit -C
 
 # Aliases
 alias :q="exit"
-alias l="ls -la"
+alias l="ls -la --color=auto"
 alias vim="nvim"
 alias ports="sudo lsof -i -P -n | grep LISTEN"
 alias edit="nvim ~/.zshrc"
