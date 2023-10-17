@@ -45,6 +45,9 @@ alias gpush="git push"
 alias gpull="git pull"
 alias glog="git log --oneline --graph"
 alias glogs="git log --stat"
+alias gwl="git worktree list"
+alias gwa="git worktree add $1"
+alias gwr="git worktree remove $1"
 
 bindkey -s '^f' 'fzf\n'
 
