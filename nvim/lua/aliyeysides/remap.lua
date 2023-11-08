@@ -28,6 +28,7 @@ map("n", "<ESC>", "<cmd> noh <CR>")
 -- delete without updating registry
 map("n", "<leader>d", "\"_d")
 map("n", "<leader>c", "\"_c")
+map("n", "<leader>C", "\"_C")
 map("v", "<leader>d", "\"_d")
 map("v", "<leader>p", "\"_dP")
 
