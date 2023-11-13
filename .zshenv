@@ -61,4 +61,5 @@ alias glogs="git log --stat"
 alias gwl="git worktree list"
 alias gwa="git worktree add $1"
 alias gwr="git worktree remove $1"
+alias grs="git remote show origin"
 
