@@ -49,3 +49,25 @@ map("n", "<leader>S", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gI<Left><Left><Left>")
 
 -- disable Q key
 map("n", "Q", "<nop>")
+
+-- Allow moving the cursor through wrapped lines with j, k, <Up> and <Down>
+-- http://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
+-- empty mode is same as using <cmd> :map
+-- also don't use g[j|k] when in operator pending mode, so it doesn't alter d, y or c behaviour-- Function to determine movement direction
+local function move(direction, g_direction)
+  return function()
+    if vim.v.count == 0 and vim.fn.mode(1):sub(1, 2) == "no" then
+      return direction
+    else
+      return g_direction
+    end
+  end
+end
+
+-- Move down with 'j' or '<Down>'
+map('', 'j', move('j', 'gj'), { expr = true })
+map('', '<Down>', move('j', 'gj'), { expr = true })
+
+-- Move up with 'k' or '<Up>'
+map('', 'k', move('k', 'gk'), { expr = true })
+map('', '<Up>', move('k', 'gk'), { expr = true })
