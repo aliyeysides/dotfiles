@@ -1,7 +1,8 @@
 require('lspconfig').gopls.setup({
   settings = {
-    gopls = {
-      gofumpt = true
+    gofumpt = true,
+    templateExtensions = {
+      "html",
     }
   }
 })
