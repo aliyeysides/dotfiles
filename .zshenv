@@ -63,3 +63,4 @@ alias gwa="git worktree add $1"
 alias gwr="git worktree remove $1"
 alias grs="git remote show origin"
 
+. "$HOME/.cargo/env"
