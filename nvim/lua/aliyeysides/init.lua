@@ -45,4 +45,12 @@ autocmd("WinClosed", {
   end,
 })
 
+autocmd("BufWritePre", {
+  group = aliyeysidesgroup,
+  pattern = "*",
+  callback = function()
+    vim.cmd(":PrettierAsync")
+  end,
+})
+
 require("lazy").setup("aliyeysides.plugins")
