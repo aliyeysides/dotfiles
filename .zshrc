@@ -4,7 +4,6 @@ export WEZTERM_CONFIG_FILE="$HOME/.config/wezterm/wezterm.lua"
 
 export ZSH_COMPDUMP=$ZSH/cache/compdump/.zcompdump-$HOST
 
-export _Z_DATA=$HOME/.cache/z/.z
 . ~/z.sh
 
 if [[ -n $SSH_CONNECTION ]]; then
@@ -21,10 +20,6 @@ done
 compinit -C
 
 bindkey -s '^f' 'fzf\n'
-
-export PIPENV_VENV_IN_PROJECT=1
-
-eval "$(rbenv init -)"
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"

@@ -2,30 +2,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$HOME/go/bin:$PATH"
 export PATH="$HOME/usr/local/go/bin/go:$PATH"
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export PATH="/usr/local/opt/ruby/bin:/usr/local/lib/ruby/gems/3.0.0/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="/usr/local/opt/sqlite/bin:$PATH"
-
-export PIPENV_VENV_IN_PROJECT=1
-
-eval "$(rbenv init -)"
-
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/aliyeysides/miniconda3/bin/conda' 'shell.zsh' 'hook' 2>/dev/null)"
-if [ $? -eq 0 ]; then
-  eval "$__conda_setup"
-else
-  if [ -f "/Users/aliyeysides/miniconda3/etc/profile.d/conda.sh" ]; then
-    . "/Users/aliyeysides/miniconda3/etc/profile.d/conda.sh"
-  else
-    export PATH="/Users/aliyeysides/miniconda3/bin:$PATH"
-  fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 # pnpm
 export PNPM_HOME="/Users/aliyeysides/Library/pnpm"
