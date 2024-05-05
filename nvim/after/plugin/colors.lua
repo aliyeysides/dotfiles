@@ -1,10 +1,12 @@
 require('rose-pine').setup({
-  disable_italics = true,
+  enable = {
+    terminal = true
+  },
   styles = {
     bold = true,
     italic = false,
+    transparency = true
   },
-  disable_background = true,
 })
 
 function SetColors(color)
@@ -12,9 +14,13 @@ function SetColors(color)
   vim.cmd.colorscheme(color)
 
   vim.api.nvim_set_hl(0, "Normal", { bg = "NONE" })
+  vim.api.nvim_set_hl(0, "NormalNC", { bg = "NONE" })
   vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
 
   vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE" })
+
+  vim.api.nvim_set_hl(0, "WinBar", { bg = "NONE" })
+  vim.api.nvim_set_hl(0, "WinBarNC", { bg = "NONE" })
 end
 
 SetColors()
