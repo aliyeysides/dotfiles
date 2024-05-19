@@ -4,7 +4,7 @@ local map = vim.keymap.set
 g.mapleader = " "
 
 -- opens netrw
-map("n", "<leader>e", vim.cmd.Ex)
+map("n", "<leader>e", "<CMD>Oil<CR>")
 
 -- navigate within insert mode
 map("i", "<C-h>", "<Left>")
