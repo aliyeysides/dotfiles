@@ -71,3 +71,7 @@ map('', '<Down>', move('j', 'gj'), { expr = true })
 -- Move up with 'k' or '<Up>'
 map('', 'k', move('k', 'gk'), { expr = true })
 map('', '<Up>', move('k', 'gk'), { expr = true })
+
+map('n', '<leader>h', function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end)
