@@ -6,7 +6,6 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # pnpm
 export PNPM_HOME="/Users/aliyeysides/Library/pnpm"
-export COREPACK_ENABLE_STRICT="0"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
