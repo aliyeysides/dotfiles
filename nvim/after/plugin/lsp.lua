@@ -33,6 +33,7 @@ lsp.on_attach(function(client, bufnr)
 end)
 
 require('mason-lspconfig').setup({
+  ensure_installed = { 'tsserver', 'lua_ls', 'gopls', 'tailwindcss', 'emmet_ls', 'eslint' },
   handlers = {
     function(server_name)
       lspconfig[server_name].setup({})
