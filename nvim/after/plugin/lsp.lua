@@ -1,6 +1,24 @@
 local lsp = require("lsp-zero")
 local lspconfig = require("lspconfig")
 
+local cmp = require('cmp')
+local cmp_format = lsp.cmp_format()
+
+cmp.setup({
+  formatting = cmp_format,
+})
+
+cmp.setup({
+  mapping = cmp.mapping.preset.insert({
+    -- scroll up and down suggestions
+    ['<C-p>'] = cmp.mapping.select_prev_item(),
+    ['<C-n>'] = cmp.mapping.select_next_item(),
+    -- scroll up and down the documentation window
+    ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-d>'] = cmp.mapping.scroll_docs(4),
+  }),
+})
+
 local map = vim.keymap.set
 
 lsp.on_attach(function(client, bufnr)
@@ -32,8 +50,9 @@ lsp.on_attach(function(client, bufnr)
   end)
 end)
 
+require('mason').setup({})
 require('mason-lspconfig').setup({
-  ensure_installed = { 'tsserver', 'lua_ls', 'gopls', 'tailwindcss', 'emmet_ls', 'eslint' },
+  ensure_installed = { 'tsserver', 'lua_ls', 'gopls', 'cssls', 'tailwindcss', 'emmet_ls', 'eslint' },
   handlers = {
     function(server_name)
       lspconfig[server_name].setup({})

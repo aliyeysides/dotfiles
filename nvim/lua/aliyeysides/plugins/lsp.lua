@@ -2,7 +2,7 @@ return {
   'VonHeikemen/lsp-zero.nvim',
   lazy = false,
   priority = 1, -- Load before other plugins (cmp)
-  branch = 'v2.x',
+  branch = 'v3.x',
   dependencies = {
     -- LSP Support
     { 'neovim/nvim-lspconfig' }, -- Required
