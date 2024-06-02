@@ -1,5 +1,5 @@
-require("symbols-outline").setup()
+require("outline").setup()
 
 local map = vim.keymap.set
 
-map("n", "<leader>o", vim.cmd.SymbolsOutline)
+map("n", "<leader>o", vim.cmd.Outline)
