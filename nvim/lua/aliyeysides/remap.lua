@@ -12,11 +12,11 @@ map("i", "<C-l>", "<Right>")
 map("i", "<C-j>", "<Down>")
 map("i", "<C-k>", "<Up>")
 
--- switch between windows
-map("n", "<C-h>", "<C-w>h")
-map("n", "<C-l>", "<C-w>l")
-map("n", "<C-j>", "<C-w>j")
-map("n", "<C-k>", "<C-w>k")
+-- switch between panes in tmux
+map("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>")
+map("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>")
+map("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>")
+map("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>")
 
 -- go to beginning and end
 map("i", "<C-b>", "<ESC>^i")
