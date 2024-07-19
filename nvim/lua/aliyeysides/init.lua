@@ -21,6 +21,7 @@ vim.opt.rtp:prepend(lazypath)
 
 local aliyeysidesgroup = augroup("aliyeysides", {})
 
+-- Show winbar when there are 2 windows
 autocmd("WinNew", {
   group = aliyeysidesgroup,
   pattern = "*",
@@ -33,6 +34,7 @@ autocmd("WinNew", {
   end,
 })
 
+-- Hide winbar when there is only 1 window
 autocmd("WinClosed", {
   group = aliyeysidesgroup,
   pattern = "*",
@@ -42,6 +44,15 @@ autocmd("WinClosed", {
     if #wincount == 2 then
       vim.opt.winbar = ""
     end
+  end,
+})
+
+-- Reset window size when Vim is resized
+autocmd("VimResized", {
+  group = aliyeysidesgroup,
+  pattern = "*",
+  callback = function()
+    vim.cmd("wincmd =")
   end,
 })
 
