@@ -56,4 +56,11 @@ autocmd("VimResized", {
   end,
 })
 
+-- Format Python code with black on save
+autocmd("bufWritePost", {
+  group = aliyeysidesgroup,
+  pattern = "*.py",
+  command = "silent !black %",
+})
+
 require("lazy").setup("aliyeysides.plugins")
