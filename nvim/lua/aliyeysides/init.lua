@@ -3,6 +3,7 @@ require("aliyeysides.set")
 
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
+local usercmd = vim.api.nvim_create_user_command
 
 -- init lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -62,5 +63,7 @@ autocmd("bufWritePost", {
   pattern = "*.py",
   command = "silent !black %",
 })
+
+usercmd("W", "w", {})
 
 require("lazy").setup("aliyeysides.plugins")
