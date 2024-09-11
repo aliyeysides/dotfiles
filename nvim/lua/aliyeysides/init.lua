@@ -64,6 +64,7 @@ autocmd("bufWritePost", {
   command = "silent !black %",
 })
 
+-- Save file on W or w
 usercmd("W", "w", {})
 
 require("lazy").setup("aliyeysides.plugins")
