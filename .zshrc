@@ -31,3 +31,6 @@ eval "$(pyenv init -)"
 
 zprof > /tmp/profile 
 
+
+# bun completions
+[ -s "/opt/homebrew/Cellar/bun/1.1.18/share/zsh/site-functions/_bun" ] && source "/opt/homebrew/Cellar/bun/1.1.18/share/zsh/site-functions/_bun"

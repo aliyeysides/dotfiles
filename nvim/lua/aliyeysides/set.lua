@@ -17,10 +17,10 @@ opt.signcolumn = "yes"
 
 -- Indenting
 opt.expandtab = true
-opt.shiftwidth = 2
+opt.shiftwidth = 4
+opt.tabstop = 4
+opt.softtabstop = 4
 opt.smartindent = true
-opt.tabstop = 2
-opt.softtabstop = 2
 
 opt.swapfile = false
 opt.backup = false
