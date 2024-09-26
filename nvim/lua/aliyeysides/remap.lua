@@ -18,6 +18,10 @@ map("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>")
 map("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>")
 map("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>")
 
+-- navigate quickfix list
+map("n", "<C-n>", "<cmd>cnext<CR>zz")
+map("n", "<C-p>", "<cmd>cprev<CR>zz")
+
 -- go to beginning and end
 map("i", "<C-b>", "<ESC>^i")
 map("i", "<C-e>", "<End>")
