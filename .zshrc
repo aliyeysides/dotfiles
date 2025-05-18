@@ -29,11 +29,17 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-zprof > /tmp/profile 
-
+terraform -install-autocomplete
 
 # bun completions
 [ -s "/opt/homebrew/Cellar/bun/1.1.18/share/zsh/site-functions/_bun" ] && source "/opt/homebrew/Cellar/bun/1.1.18/share/zsh/site-functions/_bun"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+zprof > /tmp/profile 
+
+
+
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
