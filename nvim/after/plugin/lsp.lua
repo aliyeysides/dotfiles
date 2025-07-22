@@ -35,7 +35,7 @@ lsp.on_attach(function(client, bufnr)
     end)
 
     -- open diagnostics
-    map("n", "<leader>q", function()
+    map("n", "<leader>d", function()
         vim.diagnostic.setloclist()
     end)
 
