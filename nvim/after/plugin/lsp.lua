@@ -52,46 +52,42 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { 'tsserver', 'clangd', 'lua_ls', 'gopls', 'cssls', 'tailwindcss', 'emmet_ls', 'eslint' },
-    handlers = {
-        function(server_name)
-            lspconfig[server_name].setup({})
-        end,
+    ensure_installed = { 'ts_ls', 'clangd', 'lua_ls', 'gopls', 'cssls', 'tailwindcss', 'emmet_ls', 'eslint' },
+    automatic_enable = false,
+})
 
-        lua_ls = function()
-            lspconfig.lua_ls.setup({
-                settings = {
-                    Lua = {
-                        hint = {
-                            enable = true
-                        }
-                    }
-                }
-            })
-        end,
-
-        tsserver = function()
-            lspconfig.tsserver.setup({
-                single_file_support = false,
-
-                init_options = {
-                    preferences = {
-                        includeInlayParameterNameHints = "all"
-                    },
-                },
-            })
-        end,
-
-        gopls = function()
-            lspconfig.gopls.setup({
-                settings = {
-                    templateExtensions = {
-                        "html"
-                    }
-                }
-            })
-        end
+-- Configure individual LSP servers
+lspconfig.lua_ls.setup({
+    settings = {
+        Lua = {
+            hint = {
+                enable = true
+            }
+        }
     }
 })
+
+lspconfig.ts_ls.setup({
+    single_file_support = false,
+    init_options = {
+        preferences = {
+            includeInlayParameterNameHints = "all"
+        },
+    },
+})
+
+lspconfig.gopls.setup({
+    settings = {
+        templateExtensions = {
+            "html"
+        }
+    }
+})
+
+-- Setup default configuration for other servers
+local servers = { 'clangd', 'cssls', 'tailwindcss', 'emmet_ls', 'eslint' }
+for _, server in ipairs(servers) do
+    lspconfig[server].setup({})
+end
 
 lsp.setup()
