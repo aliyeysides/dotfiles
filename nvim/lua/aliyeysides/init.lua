@@ -31,11 +31,11 @@ autocmd("VimResized", {
     end,
 })
 
--- Format Python code with black on save
+-- Format Python code with ruff on save
 autocmd("bufWritePost", {
     group = aliyeysidesgroup,
     pattern = "*.py",
-    command = "silent !black %",
+    command = "silent !ruff format %",
 })
 
 -- Format Go code using tabs
