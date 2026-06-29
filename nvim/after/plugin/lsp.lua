@@ -85,7 +85,7 @@ lspconfig.gopls.setup({
 })
 
 -- Setup default configuration for other servers
-local servers = { 'clangd', 'cssls', 'tailwindcss', 'emmet_ls', 'eslint', 'pyright' }
+local servers = { 'clangd', 'cssls', 'tailwindcss', 'emmet_ls', 'eslint', 'pyright', 'ruff' }
 for _, server in ipairs(servers) do
     lspconfig[server].setup({})
 end
