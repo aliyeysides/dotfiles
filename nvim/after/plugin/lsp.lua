@@ -24,6 +24,11 @@ local map = vim.keymap.set
 lsp.on_attach(function(client, bufnr)
     lsp.default_keymaps({ buffer = bufnr })
 
+    -- ruff's hover only explains noqa codes; let pyright own K
+    if client.name == "ruff" then
+        client.server_capabilities.hoverProvider = false
+    end
+
     -- show code action suggestions
     map("n", "<leader>ca", function()
         vim.lsp.buf.code_action()
@@ -52,7 +57,7 @@ end)
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { 'ts_ls', 'clangd', 'lua_ls', 'gopls', 'cssls', 'tailwindcss', 'emmet_ls', 'eslint' },
+    ensure_installed = { 'ts_ls', 'clangd', 'lua_ls', 'gopls', 'cssls', 'tailwindcss', 'emmet_ls', 'eslint', 'pyright' },
     automatic_enable = false,
 })
 
@@ -82,6 +87,22 @@ lspconfig.gopls.setup({
             "html"
         }
     }
+})
+
+-- pyright provides hover/completion/goto; type checking is off so mypy
+-- (via nvim-lint) owns diagnostics and ruff owns lint + format
+lspconfig.pyright.setup({
+    settings = {
+        pyright = {
+            -- let ruff organize imports
+            disableOrganizeImports = true,
+        },
+        python = {
+            analysis = {
+                typeCheckingMode = "off",
+            },
+        },
+    },
 })
 
 -- Setup default configuration for other servers
